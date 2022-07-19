@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 04 - 객체생성자함수</title>
+</head>
+
+
+<body>
+
+    <script>
+
+        // 1. 객체를 찍어내는 기게를 만드는 예전 방법 (class로 바뀜)
+
+        function mi(name) {
+            this.name = name;
+            this.showName = function () {
+                console.log(this.name)
+            }
+        }
+
+        const 치즈 = new mi('치즈');
+        치즈.showName();
+
+        const 상미 = new mi('상미');
+        상미.showName();
+
+        mi.prototype.group = '귀여워';
+
+        console.log(상미.group);
+        console.log(치즈.group);
+
+
+    </script>
+
+
+
+</body>
+
+</html>
