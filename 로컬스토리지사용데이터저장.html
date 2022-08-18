@@ -9,17 +9,15 @@
 </head>
 
 <body>
-    <ul class="txt">
-
-    </ul>
+    <ul class="txt"></ul>
     <button class="push">주기</button>
     <button class="pull">받기</button>
     <script>
         const DATA = [
-            { id: 1, name: "이창훈", age: 15 },
-            { id: 2, name: "정창훈", age: 25 },
-            { id: 3, name: "손창훈", age: 35 },
-            { id: 4, name: "박창훈", age: 45 }
+            { id: 1, name: "이상미", age: 15 },
+            { id: 2, name: "전상미", age: 25 },
+            { id: 3, name: "김상미", age: 35 },
+            { id: 4, name: "박상미", age: 45 }
         ];
 
         document.querySelector('.push').addEventListener('click', () => {
@@ -29,15 +27,15 @@
         document.querySelector('.pull').addEventListener('click', () => {
             const REDATA = JSON.parse(localStorage.getItem('data'))
             console.log(REDATA);
-            const HTM = REDATA.map(el => {
-                return '<li>' + el.name + '</li>'
-            }).join('');
-
-            document.querySelector('.txt').innerHTML = HTM;
-
-
-
         });
+
+        const REDATA = JSON.parse(localStorage.getItem('data')) || []
+
+        const HTM = REDATA.map(el => {
+            return '<li>' + el.name + '</li>'
+        }).join('')
+
+        document.querySelector('.txt').innerHTML = HTM;
 
 
 
